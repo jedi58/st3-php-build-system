@@ -1,0 +1,21 @@
+{
+	"cmd": ["/usr/local/bin/phpunit"],
+	"file_regex": "php$",
+	"selector": "source.php",
+    "working_dir": "${folder}",
+
+    "windows": {
+    	"cmd": ["php", "phpunit.phar"]
+    },
+
+    "variants": [
+    	{
+    		"name": "PHP Code Sniffer",
+    		"cmd": ["phpcs --standard=PSR2"]
+		},
+    	{
+    		"name": "PHP Code Beautifier",
+    		"cmd": ["phpcbf --standard=PSR2"]
+    	}
+    ]
+}
