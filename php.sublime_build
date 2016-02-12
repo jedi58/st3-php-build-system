@@ -11,11 +11,11 @@
   "variants": [
     {
       "name": "PHP Code Sniffer",
-      "cmd": ["phpcs --standard=PSR2"]
+      "cmd": ["/usr/local/bin/phpcs --standard=PSR2"]
     },
     {
       "name": "PHP Code Beautifier",
-      "cmd": ["phpcbf --standard=PSR2"]
+      "cmd": ["/usr/local/bin/phpcbf --standard=PSR2"]
     }
   ]
 }
