@@ -1,21 +1,16 @@
 {
-  "cmd": ["/usr/local/bin/phpunit"],
-  "file_regex": "php$",
-  "selector": "source.php",
-  "working_dir": "${folder}",
+	"cmd": [
+		"/usr/local/bin/phpunit",
+		"&&",
+		"/usr/local/bin/phpcs --standard=PSR2 $folder/src",
+		"&&",
+		"/usr/local/bin/phpcbf --standard=PSR2 $folder/src"
+	],
+	"file_regex": "php$",
+	"selector": "source.php",
+    "working_dir": "${folder}",
 
-  "windows": {
-    "cmd": ["php", "phpunit.phar"]
-  },
-
-  "variants": [
-    {
-      "name": "PHP Code Sniffer",
-      "cmd": ["/usr/local/bin/phpcs --standard=PSR2"]
-    },
-    {
-      "name": "PHP Code Beautifier",
-      "cmd": ["/usr/local/bin/phpcbf --standard=PSR2"]
+    "windows": {
+    	"cmd": ["php", "phpunit.phar"]
     }
-  ]
 }
